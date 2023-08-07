@@ -19,7 +19,6 @@ jobs:
     - name: Install Haskell
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-        source /usr/local/.ghcup/env
 
     - name: Install dependencies
       run: |
