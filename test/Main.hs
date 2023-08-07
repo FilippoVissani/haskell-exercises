@@ -4,26 +4,6 @@ import Test.HUnit
 import qualified System.Exit as Exit
 import Homework1
 
---main = do
---    putStrLn ("toDigits 1234 should be [1,2,3,4]")
---    print (toDigits 1234 == [1,2,3,4])
---    putStrLn ("toDigitsRev 1234 should be [4,3,2,1]")
---    print (toDigitsRev 1234 == [4,3,2,1])
---    putStrLn ("toDigits 0 should be []")
---    print (toDigits 0 == [])
---    putStrLn ("toDigits (-17) should be []")
---    print (toDigits (-17) == [])
---    putStrLn ("doubleEveryOther [8,7,6,5] should be [16,7,12,5]")
---    print (doubleEveryOther [8,7,6,5] == [16,7,12,5])
---    putStrLn ("doubleEveryOther  [1,2,3] should be [1,4,3]")
---    print (doubleEveryOther  [1,2,3] == [1,4,3])
---    putStrLn ("sumDigits [16,7,12,5] should be 1 + 6 + 7 + 1 + 2 + 5")
---    print (sumDigits [16,7,12,5] == 1 + 6 + 7 + 1 + 2 + 5)
---    putStrLn ("validate 4012888888881881 should be True")
---    print (validate 4012888888881881 == True)
---    putStrLn ("validate 4012888888881882 should be False")
---    print (validate 4012888888881882 == False)
-
 test1 :: Test
 test1 = TestCase (assertEqual "should be [1,2,3,4]" [1,2,3,4] (toDigits 1234))
 
