@@ -42,10 +42,10 @@ type Peg = String
 type Move = (Peg, Peg)
 hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
 hanoi 0 _ _ _          = []
-hanoi 1 start end _    = [(start, end)]
-hanoi 2 start end temp = [(start, temp), (start, end), (temp, end)]
-hanoi n start end temp =
+hanoi 1 a b _    = [(a, b)]
+hanoi 2 a b c = [(a, c), (a, b), (c, b)]
+hanoi n a b c =
     let nMinusOne = subtract 1 n
-    in hanoi nMinusOne start temp end ++
-       hanoi 1 start end temp ++
-       hanoi nMinusOne temp end start
+    in hanoi nMinusOne a c b ++
+       hanoi 1 a b c ++
+       hanoi nMinusOne c b a
