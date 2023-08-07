@@ -35,3 +35,17 @@ sumDigits (h:t) = (sum (toDigits (h))) + sumDigits t
 -- Indicates whether an Integer could be a valid credit card number
 validate :: Integer -> Bool
 validate n = ((mod (sumDigits (doubleEveryOther (toDigits n))) 10)) == 0
+
+-- Exercise 5
+-- Solves the towers of hanoi puzzle
+type Peg = String
+type Move = (Peg, Peg)
+hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
+hanoi 0 _ _ _          = []
+hanoi 1 start end _    = [(start, end)]
+hanoi 2 start end temp = [(start, temp), (start, end), (temp, end)]
+hanoi n start end temp =
+    let nMinusOne = subtract 1 n
+    in hanoi nMinusOne start temp end ++
+       hanoi 1 start end temp ++
+       hanoi nMinusOne temp end start

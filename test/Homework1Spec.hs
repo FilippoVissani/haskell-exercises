@@ -30,6 +30,9 @@ testValidate1 = TestCase (assertEqual "should be True" True (validate 4012888888
 testValidate2 :: Test
 testValidate2 = TestCase (assertEqual "should be False" False (validate 4012888888881882))
 
+testHanoi :: Test
+testHanoi = TestCase (assertEqual "should be  [(a,c), (a,b), (c,b)]" [("a","c"), ("a","b"), ("c","b")] (hanoi 2 "a" "b" "c"))
+
 homework1Spec :: Test
 homework1Spec = TestList [
     TestLabel "testToDigits1" testToDigits1,
@@ -40,5 +43,6 @@ homework1Spec = TestList [
     TestLabel "testDoubleEveryOther2" testDoubleEveryOther2,
     TestLabel "testSumDigits" testSumDigits,
     TestLabel "testValidate1" testValidate1,
-    TestLabel "testValidate2" testValidate2
+    TestLabel "testValidate2" testValidate2,
+    TestLabel "testHanoi" testHanoi
     ]
