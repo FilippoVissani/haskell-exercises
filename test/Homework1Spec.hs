@@ -47,5 +47,6 @@ homework1Spec = TestList [
     TestLabel "testSumDigits" testSumDigits,
     TestLabel "testValidate1" testValidate1,
     TestLabel "testValidate2" testValidate2,
-    TestLabel "testHanoi" testHanoi1
+    TestLabel "testHanoi1" testHanoi1,
+    TestLabel "testHanoi2" testHanoi2
     ]
